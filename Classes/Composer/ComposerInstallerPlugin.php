@@ -1,6 +1,6 @@
 <?php
 
-namespace TheWorldsCMSComposerPlugin\Composer;
+namespace TheWorldsCMS\Composer;
 
 use Composer\Composer;
 use Composer\IO\IOInterface;
