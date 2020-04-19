@@ -14,7 +14,7 @@
         }
     },
     "extra": {
-        "class": "ComposerPlugin"
+        "class": "TheWorldsCMS\\Composer\\ComposerPlugin"
     },
     "license": "MIT",
     "authors": [
