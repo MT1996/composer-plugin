@@ -3,21 +3,18 @@
     "description": "Custom Composer Class for Installation of Packages",
     "type": "composer-plugin",
     "require": {
-        "composer-plugin-api": "^1.0.0"
+        "composer-plugin-api": "^1.1"
     },
     "require-dev": {
         "composer/composer": "^1.10.0"
     },
-    "conflict": {
-        "composer/installers": "*"
+    "config": {
+        "optimize-autoloader": true
     },
     "autoload": {
         "psr-4": {
             "TheWorldsCMS\\Composer\\": "Classes/"
         }
-    },
-    "extra": {
-        "class": "TheWorldsCMS\\Composer\\ComposerInstallerPlugin"
     },
     "license": "MIT",
     "authors": [
