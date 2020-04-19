@@ -1,6 +1,5 @@
 <?php
 
-
 namespace TheWorldsCMS\Composer;
 
 use Composer\Composer;

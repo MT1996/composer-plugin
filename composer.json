@@ -8,6 +8,9 @@
     "require-dev": {
         "composer/composer": "^1.9.0"
     },
+    "conflict": {
+        "composer/installers": "*"
+    },
     "autoload": {
         "psr-4": {
             "TheWorldsCMS\\Composer\\": "Classes"
