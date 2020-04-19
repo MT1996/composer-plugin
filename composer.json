@@ -13,8 +13,11 @@
     },
     "autoload": {
         "psr-4": {
-            "TheWorldsCMS\\Composer\\": "Classes/"
+            "TheWorldsCMSComposerPlugin\\Composer\\": "Classes/"
         }
+    },
+    "extra": {
+        "class": "TheWorldsCMSComposerPlugin\\Composer\\ComposerInstallerPlugin"
     },
     "license": "MIT",
     "authors": [

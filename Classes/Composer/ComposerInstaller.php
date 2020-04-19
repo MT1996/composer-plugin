@@ -1,6 +1,6 @@
 <?php
 
-namespace TheWorldsCMS\Composer;
+namespace TheWorldsCMSComposerPlugin\Composer;
 
 use Composer\Installer\InstallerInterface;
 use Composer\Installer\LibraryInstaller;
