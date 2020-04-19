@@ -6,7 +6,7 @@ use Composer\Composer;
 use Composer\IO\IOInterface;
 use Composer\Plugin\PluginInterface;
 
-class ComposerPlugin implements PluginInterface {
+class ComposerInstallerPlugin implements PluginInterface {
 
     public function activate(Composer $composer, IOInterface $io) {
         $installer = new ComposerInstaller($io, $composer);
