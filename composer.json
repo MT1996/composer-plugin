@@ -1,0 +1,26 @@
+{
+    "name": "theworldscms/composer-plugin",
+    "description": "Custom Composer Class for Installation of Packages",
+    "type": "composer-plugin",
+    "require": {
+        "composer-plugin-api": "^1.1"
+    },
+    "require-dev": {
+        "composer/composer": "^1.9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TheWorldsCMS\\Composer\\": "./Classes"
+        }
+    },
+    "extra": {
+        "class": "ComposerPlugin"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marc Totzke",
+            "email": "Marc.Totzke@t-online.de"
+        }
+    ]
+}
