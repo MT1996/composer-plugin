@@ -10,7 +10,7 @@
     },
     "autoload": {
         "psr-4": {
-            "TheWorldsCMS\\": "Classes/"
+            "TheWorldsCMS\\": "./Classes/"
         }
     },
     "extra": {
