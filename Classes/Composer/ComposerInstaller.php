@@ -36,7 +36,7 @@ class ComposerInstaller extends LibraryInstaller implements InstallerInterface {
 
     public function supports($packageType) {
         var_dump("The Hell is going on here...", $packageType);
-        parent::supports($packageType);
+        return parent::supports($packageType);
     }
 
     private function packageTypeIsValid(string $packageType) {
