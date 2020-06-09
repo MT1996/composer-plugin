@@ -19,9 +19,6 @@ class ComposerInstaller extends LibraryInstaller implements InstallerInterface {
     // supports muss vorher geschrieben werden, da sonst nicht das Plugin richtig greift....
     public function getInstallPath(PackageInterface $package) {
         $packageType = $package->getType();
-        $packageName = $package->getName();
-        var_dump("Packagetype ist: '$packageType'");
-        var_dump("PackageName ist: '$packageName'");
         if ($this->packageTypeIsValid($packageType)) {
             $installPath = self::INSTALLPATHS[$packageType];
             if ($installPath != null) {
@@ -35,8 +32,12 @@ class ComposerInstaller extends LibraryInstaller implements InstallerInterface {
     }
 
     public function supports($packageType) {
-        var_dump("The Hell is going on here...", $packageType);
-        return parent::supports($packageType);
+        foreach (self::INSTALLPATHS as $customPackageType => $installPath) {
+            if ($customPackageType == $packageType) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private function packageTypeIsValid(string $packageType) {
