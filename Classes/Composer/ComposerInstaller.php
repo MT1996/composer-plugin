@@ -16,6 +16,7 @@ class ComposerInstaller extends LibraryInstaller implements InstallerInterface {
         "theworldscms-representation" => "./Packages/Representation"
     );
 
+    // supports muss vorher geschrieben werden, da sonst nicht das Plugin richtig greift....
     public function getInstallPath(PackageInterface $package) {
         $packageType = $package->getType();
         $packageName = $package->getName();
@@ -31,6 +32,11 @@ class ComposerInstaller extends LibraryInstaller implements InstallerInterface {
         } else {
             return parent::getInstallPath($package);
         }
+    }
+
+    public function supports($packageType) {
+        var_dump("The Hell is going on here...", $packageType);
+        parent::supports($packageType);
     }
 
     private function packageTypeIsValid(string $packageType) {
