@@ -19,6 +19,8 @@ class ComposerInstaller extends LibraryInstaller implements InstallerInterface {
     // supports muss vorher geschrieben werden, da sonst nicht das Plugin richtig greift....
     public function getInstallPath(PackageInterface $package) {
         $packageType = $package->getType();
+        $packageExtra = $package->getExtra();
+        var_dump($packageExtra);
         if ($this->packageTypeIsValid($packageType)) {
             $installPath = self::INSTALLPATHS[$packageType];
             if ($installPath != null) {
