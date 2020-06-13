@@ -11,9 +11,9 @@ class ComposerInstaller extends LibraryInstaller implements InstallerInterface {
     private const VALIDPACKAGETYPENAME = "theworldscms-";
 
     private const INSTALLPATHS = array(
-        "theworldscms-framework" => "./Packages/Framework",
-        "theworldscms-app" => "./Packages/Application",
-        "theworldscms-representation" => "./Packages/Representation"
+        "theworldscms-framework" => "./Packages/Framework/",
+        "theworldscms-app" => "./Packages/Application/",
+        "theworldscms-representation" => "./Packages/Representation/"
     );
 
     // supports muss vorher geschrieben werden, da sonst nicht das Plugin richtig greift....
@@ -21,15 +21,8 @@ class ComposerInstaller extends LibraryInstaller implements InstallerInterface {
         $packageType = $package->getType();
         $packageName = $package->getName();
         $packageExtra = $package->getExtra();
-        var_dump("PackageName: $packageName");
-        var_dump("PackageExtraArray: ", $packageExtra);
-        if ($this->packageTypeIsValid($packageType)) {
-            $installPath = self::INSTALLPATHS[$packageType];
-            if ($installPath != null) {
-                return $installPath;
-            } else {
-                return parent::getInstallPath($package);
-            }
+        if ($this->packageTypeIsValid($packageType) && $packageExtra["theWorldsCMS"]["packageInstallPath"] != null) {
+            return self::INSTALLPATHS[$packageType] . $packageExtra["theWorldsCMS"]["packageInstallPath"];
         } else {
             return parent::getInstallPath($package);
         }
