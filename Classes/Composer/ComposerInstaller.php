@@ -22,7 +22,7 @@ class ComposerInstaller extends LibraryInstaller implements InstallerInterface {
         $packageName = $package->getName();
         $packageExtra = $package->getExtra();
         var_dump("PackageName: $packageName");
-        var_dump("PackageExtraArray: $packageExtra");
+        var_dump("PackageExtraArray: ", $packageExtra);
         if ($this->packageTypeIsValid($packageType)) {
             $installPath = self::INSTALLPATHS[$packageType];
             if ($installPath != null) {
